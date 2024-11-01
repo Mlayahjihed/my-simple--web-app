@@ -21,6 +21,6 @@ for file in index.html script.js style.css; do
 gzip -c "$file" > "$BUILD_DIR/${file}.gz"
 done
 docker build -t image-from-jenkins .
-docker run -d -p 2020:8080 --name container-from-jenkins image-from-jenkins
+docker run -d -p 2020:80 --name container-from-jenkins image-from-jenkins
 docker ps
 echo "Build terminé."
